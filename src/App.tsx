@@ -2,7 +2,7 @@ import { useContext } from "react";
 import SearchBar from "./components/jop/searchBar/SearchBar";
 import Nav from "./components/navbar/nav";
 import { ThemeContext, ThemeProvider } from "./components/theme/themeContext";
-import Jop from "./components/jop/Jop";
+import Jop from "./components/jop/Jops/Jop";
 
 function App() {
   return (

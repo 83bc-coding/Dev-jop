@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../theme/themeContext";
+import { ThemeContext } from "../../theme/themeContext";
 
 const JopInfo = () => {
   const { theme } = useContext(ThemeContext);

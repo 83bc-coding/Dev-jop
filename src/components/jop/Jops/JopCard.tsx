@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../theme/themeContext";
+import { ThemeContext } from "../../theme/themeContext";
+ import x from "../../assets/profile-picture-5.jpg";
 import JopInfo from "./JopInfo";
-import x from "../../assets/profile-picture-5.jpg";
 
 const JopCard = () => {
   const { theme } = useContext(ThemeContext);
