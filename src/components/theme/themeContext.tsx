@@ -21,20 +21,3 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     </ThemeContext.Provider>
   );
 };
-
-// import { useContext } from 'react';
-// import { ThemeContext } from './ThemeContext';
-
-// const MyComponent = () => {
-//   const { theme } = useContext(ThemeContext);
-
-//   return (
-//     <div
-//       className={`bg-${theme === 'dark' ? 'gray-800' : 'white'} text-${
-//         theme === 'dark' ? 'white' : 'gray-800'
-//       } p-4`}
-//     >
-//       {/* 组件内容 */}
-//     </div>
-//   );
-// };

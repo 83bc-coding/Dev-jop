@@ -1,10 +1,6 @@
- 
- import JopCard from "./JopCard";
+import JopCard from "./JopCard";
 const JopLest = () => {
- 
-  return (
- <JopCard/>
-  );
+  return <JopCard />;
 };
 
 export default JopLest;

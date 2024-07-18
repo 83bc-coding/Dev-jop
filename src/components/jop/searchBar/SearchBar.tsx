@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import InputSearch from "./inputSearch";
 import InputFilter from "./inputFilter";
 import Checked from "../../ui/Checked";
- import { ThemeContext } from "../../theme/themeContext";
+import { ThemeContext } from "../../theme/themeContext";
 import ButtonSearch from "./ButtonSearch";
 import ButtonFilter from "./ButtonFilter";
 
@@ -28,7 +28,7 @@ const SearchBar = () => {
         <Checked />
       </div>
       <div className="h-full w-[14%] md:block sm:hidden">
-        <ButtonSearch  />
+        <ButtonSearch />
       </div>
       <div className="h-full w-[14%] md:hidden sm:block">
         <ButtonSearch T />

@@ -1,11 +1,10 @@
-import React, { useContext } from 'react'
-import { ThemeContext } from '../theme/themeContext';
-import JopInfo from './JopInfo';
+import React, { useContext } from "react";
+import { ThemeContext } from "../theme/themeContext";
+import JopInfo from "./JopInfo";
 import x from "../../assets/profile-picture-5.jpg";
 
-
 const JopCard = () => {
-    const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div
@@ -22,7 +21,7 @@ const JopCard = () => {
       </div>
       <JopInfo />
     </div>
-  )
-}
+  );
+};
 
-export default JopCard
+export default JopCard;
