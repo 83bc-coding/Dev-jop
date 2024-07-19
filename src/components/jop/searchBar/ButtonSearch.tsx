@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import Button from '../../ui/Button'
-import SearchIcon from '../../ui/SearchIcon'
-type props ={
-    T?:boolean
+ type props ={
+     w?:string,
+    children?: ReactNode;
+
 }
-const ButtonSearch = ({T}:props) => {
+const ButtonSearch = ({children,w}:props) => {
   return (
-   <Button>
- {T? <SearchIcon color='cardL'/>:"Search"}
-  
+   <Button w={w}>
+
+  {children}
    </Button>
   )
 }

@@ -5,6 +5,7 @@ import Checked from "../../ui/Checked";
 import { ThemeContext } from "../../theme/themeContext";
 import ButtonSearch from "./ButtonSearch";
 import ButtonFilter from "./ButtonFilter";
+import SearchIcon from "../../ui/SearchIcon";
 
 const SearchBar = () => {
   const { theme } = useContext(ThemeContext);
@@ -28,10 +29,13 @@ const SearchBar = () => {
         <Checked />
       </div>
       <div className="h-full w-[14%] md:block sm:hidden">
-        <ButtonSearch />
+        <ButtonSearch>Search</ButtonSearch>
       </div>
       <div className="h-full w-[14%] md:hidden sm:block">
-        <ButtonSearch T />
+        <ButtonSearch>
+          {" "}
+          <SearchIcon color="cardL" />{" "}
+        </ButtonSearch>
       </div>
     </div>
   );

@@ -3,6 +3,8 @@ import SearchBar from "./components/jop/searchBar/SearchBar";
 import Nav from "./components/navbar/nav";
 import { ThemeContext, ThemeProvider } from "./components/theme/themeContext";
 import Jop from "./components/jop/Jops/Jop";
+import JopDetails from "./components/jop/details/JopDetails";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -21,9 +23,24 @@ const AppWithContext = () => {
         theme === "dark" ? "bg-bodyD" : "bg-bodyL"
       }`}
     >
+      {" "}
       <Nav />
-      <SearchBar />
-      <Jop/>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            index
+            element={
+              <>
+                {" "}
+                <SearchBar />
+                <Jop />
+              </>
+            }
+          />
+          <Route path="details" element={<JopDetails />} />
+        </Routes>
+      </BrowserRouter>{" "}
+      {/* <JopDetails /> */}
     </div>
   );
 };

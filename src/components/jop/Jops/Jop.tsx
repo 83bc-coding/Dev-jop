@@ -7,13 +7,7 @@ const Jop = () => {
     className={`h-auto min-h-dvh rounded-md m-auto px-2 w-[70%] mt-[55px]  flex justify-between flex-wrap content-between  `}
   >
     <JopLest/>
-    <JopLest/>
-     
-    <JopLest/>
-    <JopLest/>
-    <JopLest/>
-    <JopLest/>
-    <JopLest/>
+ 
  
   </div>
   )

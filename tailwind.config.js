@@ -24,7 +24,8 @@ export default {
     'borderR':'rgba(110, 128, 152, 0.2)',
     'info':'#9daec2',
     'nameJ':'#121721',
-    'state':'#5964e0'
+    'state':'#5964e0',
+    'log':'hsl(36, 87%, 49%)'
   },
     container: {
     center: true,
