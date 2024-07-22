@@ -4,22 +4,26 @@ import CompanySite from "./CompanySite";
 import LogoLarg from "./LogoLarg";
 import Bar from "./Bar";
 import { useJobDetails } from "../../../../store/JobDetalis/useJobDetails";
-const BarDetails = () => {
-  const { job } = useJobDetails();
-console.log("00",job?.company)
-  return (
+type props = {
+  company: string;
+  d: string;
+  fill: string;
+ 
+ };
+const BarDetails = ({company,d,fill}:props) => {
+    return (
     <Bar>
       <LogoSmall
-        d={ job?.logo}
-        fill={job?.fill}
+        d={d}
+        fill={fill}
       />
       <LogoLarg
-         d={ job?.logo}
-         fill={job?.fill}
-      />
+         d={d}
+         fill={fill}
+       />
       
       <div className=" w-[150px] l-0  flex flex-col justify-center items-center  lg:ml-[-150px] md:ml-[-100px]  ">
-        <JopInfo country="" time="" ago="" state={`${job?.company}.com`} name="socer" />
+        <JopInfo country="" time="" ago="" state={`${company}.com`} name={company} />
       </div>
       <CompanySite />
     </Bar>

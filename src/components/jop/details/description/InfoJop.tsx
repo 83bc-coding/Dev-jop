@@ -1,16 +1,21 @@
 import React from "react";
 import JopInfo from "../../Jops/JopInfo";
 import ButtonSearch from "../../searchBar/ButtonSearch";
-
-const InfoJop = () => {
+type props = {
+  country: string;
+  time: string;
+  ago: string;
+  name: string;
+};
+const InfoJop = ({country,time,ago,name}:props) => {
   return (
     <div className="   w-[95%]    h-auto  flex sm:flex-col md:flex-row justify-between items-center  content-between   ">
       <div>
         <JopInfo
-          country="Japan"
-          time="full Time"
-          ago="5d ago"
-          name="Senior Software Engineer"
+          country={country}
+          time={time}
+          ago={ago}
+          name={name}
         >
           <span className="w-1 h-1 rounded-full bg-info "> </span>
         </JopInfo>

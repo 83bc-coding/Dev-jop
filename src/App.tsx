@@ -37,7 +37,7 @@ const AppWithContext = () => {
               </>
             }
           />
-          <Route path="details" element={<JopDetails />} />
+          <Route path="details/:id" element={<JopDetails />} />
         </Routes>
       </BrowserRouter>{" "}
       {/* <JopDetails /> */}

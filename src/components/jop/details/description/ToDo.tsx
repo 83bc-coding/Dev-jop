@@ -2,8 +2,10 @@ import React from 'react'
 import Text from '../../../ui/Text'
 import Desc from '../../../ui/Desc'
 import Lists from '../../../ui/listsDisc'
-
-const ToDo = () => {
+type props ={
+  role:object
+}
+const ToDo = ({role}:props) => {
   return (
     <>
     <Text name={"What You Will Do"}/>

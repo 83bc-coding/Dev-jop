@@ -2,18 +2,34 @@ import React from "react";
 import Bar from "./Bar";
 import InfoJop from "./InfoJop";
 import Desc from "../../../ui/Desc";
-  import Requirements from "./Requirements";
+import Requirements from "./Requirements";
 import ToDo from "./ToDo";
-
-const Description = () => {
- 
+type props = {
+  country: string;
+  time: string;
+  ago: string;
+  name: string;
+  description: string;
+  requirements: object;
+  role: object;
+};
+const Description = ({
+  role,
+  requirements,
+  country,
+  time,
+  ago,
+  name,
+  description,
+}: props) => {
   return (
     <Bar>
-   <InfoJop/>
-   <Desc text={"cx"}/>
- 
-   <Requirements/>
-   <ToDo/>
+      <InfoJop country={country} time={time} ago={ago} name={name} />
+
+      <Desc text={description} />
+
+      <Requirements requirements={requirements} />
+      <ToDo role={role} />
     </Bar>
   );
 };

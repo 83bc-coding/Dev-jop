@@ -15,6 +15,7 @@ const JopList = () => {
           country={job?.location}
           d={job?.logo}
           jobb={job}
+          id={job?.id}
         />
       ))}
       </>
