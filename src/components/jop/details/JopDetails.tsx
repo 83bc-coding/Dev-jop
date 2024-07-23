@@ -16,12 +16,12 @@ const JopDetails = () => {
         country={x.location}
         time={x.postedAt}
         ago={x.postedAt}
-        name={x.company}
+        name={x.position}
         description={x.description}
         requirements={x.requirements}
         role={x.role}
       />
-      <BarDown name={x.company} state={x.location}/>
+      <BarDown name={x.position} state={x.company}/>
     </div>
   );
 };
