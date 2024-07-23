@@ -5,7 +5,7 @@ import Checked from "../../ui/Checked";
 import { ThemeContext } from "../../theme/themeContext";
 import ButtonSearch from "./ButtonSearch";
 import ButtonFilter from "./ButtonFilter";
-import SearchIcon from "../../ui/SearchIcon";
+import SearchIcon from "../../icons/SearchIcon";
 import { JobsContext } from "../../../store/JobDetalis/JobsContextProvider";
 
 const SearchBar: React.FC = () => {

@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import Input from "../../ui/Input";
-import FilterIcon from "../../ui/LocationIcon";
+import FilterIcon from "../../icons/LocationIcon";
 import { JobsContext } from "../../../store/JobDetalis/JobsContextProvider";
 type props = {
   onChange?: any;

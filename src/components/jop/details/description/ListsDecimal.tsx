@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import Li from "./Li";
+import Li from "../../../ui/Li";
 
 type Props = {
   data: object;

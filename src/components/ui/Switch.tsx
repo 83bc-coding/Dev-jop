@@ -1,10 +1,10 @@
 import React from "react";
-import SunIcon from "./SunIcon";
-import MoonIcon from "./MoonIcon";
+import SunIcon from "../icons/SunIcon";
+import MoonIcon from "../icons/MoonIcon";
 type props = {
   onChange: () => void;
 };
-const Mode = ({ onChange }: props) => {
+const Switch = ({ onChange }: props) => {
   return (
     <div className="mx-5 mt-12">
       <label className="inline-flex items-center cursor-pointer">
@@ -23,4 +23,4 @@ const Mode = ({ onChange }: props) => {
   );
 };
 
-export default Mode;
+export default Switch;

@@ -1,5 +1,5 @@
 import React from "react";
-import FilterIcon from "../../ui/FilterIcon";
+import FilterIcon from "../../icons/FilterIcon";
 import Button from "../../ui/Button";
 
 const ButtonFilter = () => {
