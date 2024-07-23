@@ -4,6 +4,7 @@ import Description from "./description/description";
 
 import { useParams } from "react-router-dom";
 import { GetJobDetails } from "./GetJobDetails";
+import BarDown from "./barDown/BarDown";
 const JopDetails = () => {
   const x = GetJobDetails();
   console.log(x, "ffff");
@@ -20,6 +21,7 @@ const JopDetails = () => {
         requirements={x.requirements}
         role={x.role}
       />
+      <BarDown name={x.company} state={x.location}/>
     </div>
   );
 };

@@ -1,7 +1,12 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../theme/themeContext";
-
-const Checked = () => {
+type props = {
+  onChange?: any;
+  ref?: any;
+  checked?: any;
+ 
+};
+const Checked = ({checked,onChange,ref}:props) => {
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -10,6 +15,9 @@ const Checked = () => {
         type="checkbox"
         value=""
         className=" h-5 w-5  border-blue rounded-md  accent-blue  focus:ring-blue focus:ring-2  dark:bg-gray-700 "
+        checked={checked}
+        ref={ref}
+        onChange={onChange}
       />
       <label
         className={`ms-2 text-xl font-bold ${

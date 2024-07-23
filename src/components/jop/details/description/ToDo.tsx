@@ -1,16 +1,15 @@
-import React from 'react'
-import Text from '../../../ui/Text'
+ import Text from '../../../ui/Text'
 import Desc from '../../../ui/Desc'
-import Lists from '../../../ui/listsDisc'
-type props ={
-  role:object
+import ListsDecimal from '../../../ui/ListsDecimal'
+ type props ={
+  role:any
 }
 const ToDo = ({role}:props) => {
   return (
     <>
     <Text name={"What You Will Do"}/>
-    <Desc text={" v sgf gf"}/>
-      <Lists type={"disc"}/>
+    <Desc text={role?.content}/>
+      <ListsDecimal data={role}/>
   </>
   )
 }

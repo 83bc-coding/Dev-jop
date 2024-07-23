@@ -1,13 +1,23 @@
-import React from 'react'
-import Input from '../../ui/Input'
-import FilterIcon from '../../ui/LocationIcon'
-
-const InputFilter = () => {
+import React, { useContext, useRef, useState } from "react";
+import Input from "../../ui/Input";
+import FilterIcon from "../../ui/LocationIcon";
+import { JobsContext } from "../../../store/JobDetalis/JobsContextProvider";
+type props = {
+  onChange?: any;
+  ref?: any;
+  value: string;
+};
+const InputFilter = ({ onChange, value, ref }: props) => {
   return (
-   <Input title='Filter by location...'>
-   <FilterIcon/>
-   </Input>
-  )
-}
+    <Input
+      title="Filter by location..."
+      onChange={onChange}
+      value={value}
+      ref={ref}
+    >
+      <FilterIcon />
+    </Input>
+  );
+};
 
-export default InputFilter
+export default InputFilter;
