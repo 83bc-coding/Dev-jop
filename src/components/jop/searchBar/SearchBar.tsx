@@ -7,6 +7,7 @@ import ButtonSearch from "./ButtonSearch";
 import ButtonFilter from "./ButtonFilter";
 import SearchIcon from "../../icons/SearchIcon";
 import { JobsContext } from "../../../store/JobDetalis/JobsContextProvider";
+import useTheme from "../../Hook/useTheme";
 
 const SearchBar: React.FC = () => {
   const { filterByInfos, filterByLocation, fullTimeOnly, updateFilterParams } =
@@ -49,7 +50,7 @@ const SearchBar: React.FC = () => {
   ) => {
     setFullTimeOnlyChecked(e.target.checked);
   };
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   return (
     <div

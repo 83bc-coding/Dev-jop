@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import SearchBar from "./components/jop/searchBar/SearchBar";
-import Nav from "./components/navbar/nav";
+import Nav from "./components/layout/navbar/nav";
 import { ThemeContext, ThemeProvider } from "./components/theme/themeContext";
 import Jop from "./components/jop/Jops/Jop";
 import JopDetails from "./components/jop/details/JopDetails";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import useTheme from "./components/Hook/useTheme";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
 }
 
 const AppWithContext = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   return (
     <div

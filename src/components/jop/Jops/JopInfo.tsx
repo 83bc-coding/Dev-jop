@@ -1,5 +1,6 @@
 import React, { ReactNode, useContext } from "react";
 import { ThemeContext } from "../../theme/themeContext";
+import useTheme from "../../Hook/useTheme";
 type props = {
   name?: string;
   time?: string;
@@ -9,8 +10,16 @@ type props = {
   children?: ReactNode;
   onClick?: any;
 };
-const JopInfo = ({ name, time, ago, country, state, children ,onClick}: props) => {
-  const { theme } = useContext(ThemeContext);
+const JopInfo = ({
+  name,
+  time,
+  ago,
+  country,
+  state,
+  children,
+  onClick,
+}: props) => {
+  const { theme } = useTheme();
 
   return (
     <>

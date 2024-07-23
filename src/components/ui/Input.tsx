@@ -1,5 +1,6 @@
 import React, { ReactNode, useContext } from "react";
 import { ThemeContext } from "../theme/themeContext";
+import useTheme from "../Hook/useTheme";
 type props = {
   title: string;
   children: ReactNode;
@@ -7,8 +8,8 @@ type props = {
   ref?: any;
   value: string;
 };
-const Input = ({ children, title, onChange,value,ref }: props) => {
-  const { theme } = useContext(ThemeContext);
+const Input = ({ children, title, onChange, value, ref }: props) => {
+  const { theme } = useTheme();
 
   return (
     <div className="flex items-center w-[100%] mx-auto h-full  border-r-[1px] border-borderR">

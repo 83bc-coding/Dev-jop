@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../theme/themeContext";
+import useTheme from "../Hook/useTheme";
 type props = {
   onChange?: any;
   ref?: any;
   checked?: any;
- 
 };
-const Checked = ({checked,onChange,ref}:props) => {
-  const { theme } = useContext(ThemeContext);
+const Checked = ({ checked, onChange, ref }: props) => {
+  const { theme } = useTheme();
 
   return (
     <div className="flex items-center mt-8 ml-4">

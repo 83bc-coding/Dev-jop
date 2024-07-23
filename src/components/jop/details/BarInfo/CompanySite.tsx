@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import Button from "../../../ui/Button";
-import { ThemeContext } from "../../../theme/themeContext";
+import useTheme from "../../../Hook/useTheme";
 
 const CompanySite = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   return (
     <div className=" w-[40%]  flex flex-col justify-start items-end sm:mb-6">

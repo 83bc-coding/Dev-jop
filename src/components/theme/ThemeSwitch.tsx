@@ -1,10 +1,9 @@
 import React from "react";
-import { useContext } from "react";
-import { ThemeContext } from "./themeContext";
 import Switch from "../ui/Switch";
+import useTheme from "../Hook/useTheme";
 
 const ThemeSwitch = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useTheme();
   // onChange
   const handleThemeToggle = () => {
     setTheme(theme === "light" ? "dark" : "light");

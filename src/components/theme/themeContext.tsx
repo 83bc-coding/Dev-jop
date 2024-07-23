@@ -1,6 +1,6 @@
 import { createContext, useState, ReactNode } from "react";
 
-type ThemeContextType = {
+export type ThemeContextType = {
   theme: "light" | "dark";
   setTheme: (newTheme: "light" | "dark") => void;
 };
