@@ -7,38 +7,13 @@ import includesText from "../../helper/includesText";
 const JopList = () => {
   const { filterByInfos, filterByLocation, fullTimeOnly } =
     useContext(JobsContext);
-  const filteredJobsData = jobsData.filter((jobData) => {
-    let isFoundWithInfos = false;
-    let isFoundWithLocation = false;
-    let isFoundWithFullTime = false;
-
-    if (filterByInfos)
-      isFoundWithInfos =
-        includesText(jobData.company, filterByInfos) ||
-        includesText(jobData.position, filterByInfos);
-    if (filterByLocation)
-      isFoundWithLocation = includesText(jobData.location, filterByLocation);
-    if (fullTimeOnly)
-      isFoundWithFullTime = includesText(jobData.contract, "Full Time");
-
-    if (filterByInfos && filterByLocation && fullTimeOnly)
-      return isFoundWithInfos && isFoundWithLocation && isFoundWithFullTime;
-
-    if (filterByInfos && filterByLocation)
-      return isFoundWithInfos && isFoundWithLocation;
-
-    if (filterByInfos && fullTimeOnly)
-      return isFoundWithInfos && isFoundWithFullTime;
-
-    if (filterByLocation && fullTimeOnly)
-      return isFoundWithLocation && isFoundWithFullTime;
-
-    if (filterByInfos) return isFoundWithInfos;
-    if (filterByLocation) return isFoundWithLocation;
-    if (fullTimeOnly) return isFoundWithFullTime;
-
-    return true;
-  });
+    
+    const filteredJobsData = jobsData.filter((jobData) => {
+      const matchesInfos = filterByInfos ? includesText(jobData.company, filterByInfos) || includesText(jobData.position, filterByInfos) : true;
+      const matchesLocation = filterByLocation ? includesText(jobData.location, filterByLocation) : true;
+      const matchesFullTime = fullTimeOnly ? includesText(jobData.contract, "Full Time") : true;
+      return matchesInfos && matchesLocation && matchesFullTime;
+    });
   return (
     <>
       {filteredJobsData.map((job) => (
