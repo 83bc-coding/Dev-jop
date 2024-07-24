@@ -8,48 +8,22 @@ import ButtonFilter from "./ButtonFilter";
 import SearchIcon from "../../icons/SearchIcon";
 import { JobsContext } from "../../../store/JobDetalis/JobsContextProvider";
 import useTheme from "../../Hook/useTheme";
+import useFilterJobs from "../../Hook/useFilterJobs";
 
 const SearchBar: React.FC = () => {
-  const { filterByInfos, filterByLocation, fullTimeOnly, updateFilterParams } =
-    useContext(JobsContext);
+  const {
 
-  const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
-  const [filterByInfosValue, setFilterByInfosValue] = useState(filterByInfos);
-  const [filterByLocationValue, setFilterByLocationValue] =
-    useState(filterByLocation);
-  const [fullTimeOnlyChecked, setFullTimeOnlyChecked] = useState(fullTimeOnly);
-
-  const filterByInfosInput = useRef<HTMLInputElement>(null);
-  const filterByLocationInput = useRef<HTMLInputElement>(null);
-  const fullTimeOnlyInput = useRef<HTMLInputElement>(null);
-
-  const submitSearchHandler = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (isSettingsModalOpen) setIsSettingsModalOpen(false);
-
-    updateFilterParams(
-      filterByInfosValue,
-      filterByLocationValue,
-      fullTimeOnlyChecked
-    );
-  };
-
-  const changeInputInfosHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFilterByInfosValue(e.target.value);
-  };
-
-  const changeInputLocationHandler = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setFilterByLocationValue(e.target.value);
-  };
-
-  const changeCheckboxValueHandler = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setFullTimeOnlyChecked(e.target.checked);
-  };
+    filterByInfosValue,
+    filterByLocationValue,
+    fullTimeOnlyChecked,
+    filterByInfosInput,
+    filterByLocationInput,
+    fullTimeOnlyInput,
+    submitSearchHandler,
+    changeInputInfosHandler,
+    changeInputLocationHandler,
+    changeCheckboxValueHandler
+  } = useFilterJobs();
   const { theme } = useTheme();
 
   return (
