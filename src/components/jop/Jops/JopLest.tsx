@@ -1,12 +1,10 @@
-import JopCard from "./JopCard";
 import jobsData from "../../../assets/data.json";
-import { useContext } from "react";
-import { JobsContext } from "../../../store/JobDetalis/JobsContextProvider";
+import { useJobs } from "../../../store/JobDetalis/JobsContextProvider";
 import includesText from "../../helper/includesText";
+import JopCard from "./JopCard";
 
 const JopList = () => {
-  const { filterByInfos, filterByLocation, fullTimeOnly } =
-    useContext(JobsContext);
+  const { filterByInfos, filterByLocation, fullTimeOnly } = useJobs();
 
   const filteredJobsData = jobsData.filter(
     ({ company, position, location, contract }) => {
@@ -23,6 +21,7 @@ const JopList = () => {
       return matchesInfos && matchesLocation && matchesFullTime;
     }
   );
+
   return (
     <>
       {filteredJobsData.map((job) => (

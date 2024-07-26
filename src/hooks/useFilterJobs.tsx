@@ -1,75 +1,37 @@
 // useSearchBar.tsx
-import { useCallback, useContext, useRef, useState } from "react";
-import { JobsContext } from "../store/JobDetalis/JobsContextProvider";
+import { useState } from "react";
+import { useJobs } from "../store/JobDetalis/JobsContextProvider";
+
+type Filters = {
+  title: string;
+  location: string;
+  isFullTime: boolean;
+};
 
 const useFilterJobs = () => {
-  const { filterByInfos, filterByLocation, fullTimeOnly, updateFilterParams } =
-    useContext(JobsContext);
+  const { updateFilterParams } = useJobs();
 
-  const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
-  const [filterByInfosValue, setFilterByInfosValue] = useState(filterByInfos);
-  const [filterByLocationValue, setFilterByLocationValue] =
-    useState(filterByLocation);
-  const [fullTimeOnlyChecked, setFullTimeOnlyChecked] = useState(fullTimeOnly);
+  const [filters, setFilters] = useState<Filters>({
+    title: "",
+    location: "",
+    isFullTime: false,
+  });
 
-  const filterByInfosInput = useRef<HTMLInputElement>(null);
-  const filterByLocationInput = useRef<HTMLInputElement>(null);
-  const fullTimeOnlyInput = useRef<HTMLInputElement>(null);
-
-  const submitSearchHandler = useCallback(
-    (e: React.FormEvent) => {
-      e.preventDefault();
-
-      if (isSettingsModalOpen) setIsSettingsModalOpen(false);
-
-      updateFilterParams(
-        filterByInfosValue,
-        filterByLocationValue,
-        fullTimeOnlyChecked
-      );
-    },
-    [
-      isSettingsModalOpen,
-      filterByInfosValue,
-      filterByLocationValue,
-      fullTimeOnlyChecked,
-      updateFilterParams,
-    ]
-  );
-
-  const changeInputInfosHandler = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setFilterByInfosValue(e.target.value);
-    },
-    [setFilterByInfosValue]
-  );
-
-  const changeInputLocationHandler = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setFilterByLocationValue(e.target.value);
-    },
-    [setFilterByLocationValue]
-  );
-
-  const changeCheckboxValueHandler = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setFullTimeOnlyChecked(e.target.checked);
-    },
-    [setFullTimeOnlyChecked]
-  );
-
-  return {
-    filterByInfosValue,
-    filterByLocationValue,
-    fullTimeOnlyChecked,
-    filterByInfosInput,
-    filterByLocationInput,
-    fullTimeOnlyInput,
-    submitSearchHandler,
-    changeInputInfosHandler,
-    changeInputLocationHandler,
-    changeCheckboxValueHandler,
+  const handleFilterChange = (
+    filter: keyof Filters,
+    value: string | boolean
+  ) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [filter]: value,
+    }));
   };
+
+  const handleSubmit = () => {
+    updateFilterParams(filters.title, filters.location, filters.isFullTime);
+  };
+
+  return { handleFilterChange, handleSubmit, filters };
 };
 
 export default useFilterJobs;

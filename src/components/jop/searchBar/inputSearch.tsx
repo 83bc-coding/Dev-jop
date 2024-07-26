@@ -1,12 +1,12 @@
-import React, { useContext, useRef, useState } from "react";
-import Input from "../../ui/Input";
 import SearchIcon from "../../icons/SearchIcon";
-import { JobsContext } from "../../../store/JobDetalis/JobsContextProvider";
+import Input from "../../ui/Input";
+
 type props = {
   onChange?: any;
   ref?: any;
   value: string;
 };
+
 const InputSearch = ({ onChange, value, ref }: props) => {
   return (
     <Input

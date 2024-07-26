@@ -1,61 +1,49 @@
-import { createContext, useState, ReactNode } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 
 type JobsContextValue = {
   filterByInfos: string;
   filterByLocation: string;
   fullTimeOnly: boolean;
   updateFilterParams: (
-    filterByInfosValue: string,
-    filterByLocationValue: string,
-    isFullTimeOnlyChecked: boolean
+    title: string,
+    location: string,
+    fullTime: boolean
   ) => void;
 };
 
-const initialContextValue: JobsContextValue = {
-  filterByInfos: "",
-  filterByLocation: "",
-  fullTimeOnly: false,
-  updateFilterParams: () => {},
-};
+const JobsContext = createContext<JobsContextValue | undefined>(undefined);
 
-const JobsContext = createContext<JobsContextValue>(initialContextValue);
-
-type JobsContextProviderProps = {
-  children: ReactNode;
-};
-
-const JobsContextProvider = ({ children }: JobsContextProviderProps) => {
-  const [filterByInfos, setFilterByInfos] = useState(
-    initialContextValue.filterByInfos
-  );
-  const [filterByLocation, setFilterByLocation] = useState(
-    initialContextValue.filterByLocation
-  );
-  const [fullTimeOnly, setFullTimeOnly] = useState(
-    initialContextValue.fullTimeOnly
-  );
+export const JobsProvider = ({ children }: { children: ReactNode }) => {
+  const [filterByInfos, setFilterByInfos] = useState("");
+  const [filterByLocation, setFilterByLocation] = useState("");
+  const [fullTimeOnly, setFullTimeOnly] = useState(false);
 
   const updateFilterParams = (
-    filterByInfosValue: string,
-    filterByLocationValue: string,
-    isFullTimeOnlyChecked: boolean
+    title: string,
+    location: string,
+    fullTime: boolean
   ) => {
-    setFilterByInfos(filterByInfosValue);
-    setFilterByLocation(filterByLocationValue);
-    setFullTimeOnly(isFullTimeOnlyChecked);
+    setFilterByInfos(title);
+    setFilterByLocation(location);
+    setFullTimeOnly(fullTime);
   };
 
-  const contextValue: JobsContextValue = {
+  const value = {
     filterByInfos,
     filterByLocation,
     fullTimeOnly,
     updateFilterParams,
   };
 
-  return (
-    <JobsContext.Provider value={contextValue}>{children}</JobsContext.Provider>
-  );
+  return <JobsContext.Provider value={value}>{children}</JobsContext.Provider>;
 };
 
-export { JobsContext };
-export default JobsContextProvider;
+export default JobsProvider;
+
+export const useJobs = () => {
+  const context = useContext(JobsContext);
+  if (context === undefined) {
+    throw new Error("useJobs must be used within a JobsProvider");
+  }
+  return context;
+};

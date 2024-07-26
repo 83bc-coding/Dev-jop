@@ -3,8 +3,8 @@ import useTheme from "./hooks/useTheme";
 import Jop from "./components/jop/Jops/Jop";
 import JopDetails from "./components/jop/details/JopDetails";
 import SearchBar from "./components/jop/searchBar/SearchBar";
-import Nav from "./components/layout/navbar/nav";
 import { ThemeProvider } from "./components/theme/themeContext";
+import Navbar from "./components/layout/Navbar";
 
 function App() {
   return (
@@ -23,8 +23,7 @@ const AppWithContext = () => {
         theme === "dark" ? "bg-bodyD" : "bg-bodyL"
       }`}
     >
-      {" "}
-      <Nav />
+      <Navbar />
       <BrowserRouter>
         <Routes>
           <Route
@@ -39,7 +38,7 @@ const AppWithContext = () => {
           />
           <Route path="details/:id" element={<JopDetails />} />
         </Routes>
-      </BrowserRouter>{" "}
+      </BrowserRouter>
       {/* <JopDetails /> */}
     </div>
   );

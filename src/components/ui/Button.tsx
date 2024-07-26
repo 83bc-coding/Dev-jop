@@ -3,9 +3,9 @@ type props = {
   children?: ReactNode;
   T?: boolean;
   w?: string;
-  onClick?:any
+  onClick?: any;
 };
-const Button = ({ children, T, w,onClick }: props) => {
+const Button = ({ children, T, w, onClick }: props) => {
   return (
     <button
       type="button"
