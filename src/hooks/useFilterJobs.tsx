@@ -1,6 +1,6 @@
 // useSearchBar.tsx
-import { useState, useContext, useRef, useCallback } from "react";
-import { JobsContext } from "../../store/JobDetalis/JobsContextProvider";
+import { useCallback, useContext, useRef, useState } from "react";
+import { JobsContext } from "../store/JobDetalis/JobsContextProvider";
 
 const useFilterJobs = () => {
   const { filterByInfos, filterByLocation, fullTimeOnly, updateFilterParams } =

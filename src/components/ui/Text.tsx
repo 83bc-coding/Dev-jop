@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "../theme/themeContext";
-import useTheme from "../Hook/useTheme";
+import useTheme from "../../hooks/useTheme";
+
 type props = {
   name: string;
 };

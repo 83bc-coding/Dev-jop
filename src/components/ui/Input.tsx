@@ -1,11 +1,11 @@
-import React, { ReactNode, useContext } from "react";
-import { ThemeContext } from "../theme/themeContext";
-import useTheme from "../Hook/useTheme";
+import { ReactNode, Ref } from "react";
+import useTheme from "../../hooks/useTheme";
+
 type props = {
   title: string;
   children: ReactNode;
-  onChange?: any;
-  ref?: any;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  ref?: Ref<HTMLInputElement>;
   value: string;
 };
 const Input = ({ children, title, onChange, value, ref }: props) => {

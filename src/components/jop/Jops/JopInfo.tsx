@@ -1,6 +1,6 @@
-import React, { ReactNode, useContext } from "react";
-import { ThemeContext } from "../../theme/themeContext";
-import useTheme from "../../Hook/useTheme";
+import { ReactNode } from "react";
+import useTheme from "../../../hooks/useTheme";
+
 type props = {
   name?: string;
   time?: string;
@@ -8,8 +8,9 @@ type props = {
   country?: string;
   state?: string;
   children?: ReactNode;
-  onClick?: any;
+  onClick?: () => void;
 };
+
 const JopInfo = ({
   name,
   time,

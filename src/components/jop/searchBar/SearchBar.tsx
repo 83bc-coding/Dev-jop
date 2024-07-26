@@ -1,18 +1,15 @@
-import React, { useContext, useRef, useState } from "react";
-import InputSearch from "./inputSearch";
-import InputFilter from "./inputFilter";
-import Checked from "../../ui/Checked";
-import { ThemeContext } from "../../theme/themeContext";
-import ButtonSearch from "./ButtonSearch";
-import ButtonFilter from "./ButtonFilter";
+import React from "react";
+import useFilterJobs from "../../../hooks/useFilterJobs";
+import useTheme from "../../../hooks/useTheme";
 import SearchIcon from "../../icons/SearchIcon";
-import { JobsContext } from "../../../store/JobDetalis/JobsContextProvider";
-import useTheme from "../../Hook/useTheme";
-import useFilterJobs from "../../Hook/useFilterJobs";
+import Checked from "../../ui/Checked";
+import ButtonFilter from "./ButtonFilter";
+import ButtonSearch from "./ButtonSearch";
+import InputFilter from "./inputFilter";
+import InputSearch from "./inputSearch";
 
 const SearchBar: React.FC = () => {
   const {
-
     filterByInfosValue,
     filterByLocationValue,
     fullTimeOnlyChecked,
@@ -22,7 +19,7 @@ const SearchBar: React.FC = () => {
     submitSearchHandler,
     changeInputInfosHandler,
     changeInputLocationHandler,
-    changeCheckboxValueHandler
+    changeCheckboxValueHandler,
   } = useFilterJobs();
   const { theme } = useTheme();
 

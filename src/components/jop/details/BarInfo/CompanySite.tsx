@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import useTheme from "../../../../hooks/useTheme";
 import Button from "../../../ui/Button";
-import useTheme from "../../../Hook/useTheme";
 
 const CompanySite = () => {
   const { theme } = useTheme();

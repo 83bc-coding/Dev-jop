@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "../theme/themeContext";
-import useTheme from "../Hook/useTheme";
-type props = {
-  onChange?: any;
-  ref?: any;
-  checked?: any;
+import { Ref } from "react";
+import useTheme from "../../hooks/useTheme";
+
+type CheckedProps = {
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  ref?: Ref<HTMLInputElement>;
+  checked?: boolean;
 };
-const Checked = ({ checked, onChange, ref }: props) => {
+
+const Checked = ({ checked, onChange, ref }: CheckedProps) => {
   const { theme } = useTheme();
 
   return (

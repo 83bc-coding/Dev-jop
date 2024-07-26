@@ -1,6 +1,5 @@
-import React from "react";
+import useTheme from "../../hooks/useTheme";
 import Switch from "../ui/Switch";
-import useTheme from "../Hook/useTheme";
 
 const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();

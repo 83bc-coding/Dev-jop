@@ -1,10 +1,8 @@
-import React, { useContext, useEffect } from "react";
-import { ThemeContext } from "../../theme/themeContext";
+import { useNavigate } from "react-router-dom";
+import useTheme from "../../../hooks/useTheme";
 import JopInfo from "./JopInfo";
 import LogoSmall from "./LogoSmall";
-import { useJobDetails } from "../../../store/JobDetalis/useJobDetails";
-import { Route, useNavigate } from "react-router-dom";
-import useTheme from "../../Hook/useTheme";
+
 type props = {
   name: string;
   ago: string;

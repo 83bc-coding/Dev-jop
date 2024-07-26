@@ -1,5 +1,5 @@
-import React, { ReactNode, useContext } from "react";
-import useTheme from "../../../Hook/useTheme";
+import { ReactNode } from "react";
+import useTheme from "../../../../hooks/useTheme";
 type props = {
   children?: ReactNode;
 };
