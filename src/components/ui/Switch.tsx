@@ -1,6 +1,11 @@
+<<<<<<< Updated upstream:src/components/ui/Switch.tsx
 import React from "react";
 import SunIcon from "../icons/SunIcon";
 import MoonIcon from "../icons/MoonIcon";
+=======
+ import SunIcon from "./SunIcon";
+import MoonIcon from "./MoonIcon";
+>>>>>>> Stashed changes:src/components/ui/Mode.tsx
 type props = {
   onChange: () => void;
 };

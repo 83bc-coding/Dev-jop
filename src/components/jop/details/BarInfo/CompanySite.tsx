@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import useTheme from "../../../../hooks/useTheme";
+=======
+import   { useContext } from "react";
+>>>>>>> Stashed changes
 import Button from "../../../ui/Button";
 
 const CompanySite = () => {

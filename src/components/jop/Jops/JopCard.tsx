@@ -1,8 +1,16 @@
+<<<<<<< Updated upstream
 import { useNavigate } from "react-router-dom";
 import useTheme from "../../../hooks/useTheme";
 import JopInfo from "./JopInfo";
 import LogoSmall from "./LogoSmall";
 
+=======
+import   { useContext } from "react";
+import { ThemeContext } from "../../theme/themeContext";
+import JopInfo from "./JopInfo";
+import LogoSmall from "./LogoSmall";
+ import {   useNavigate } from "react-router-dom";
+>>>>>>> Stashed changes
 type props = {
   name: string;
   ago: string;

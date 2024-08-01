@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 import SearchIcon from "../../icons/SearchIcon";
 import Input from "../../ui/Input";
+=======
+ import Input from '../../ui/Input'
+import SearchIcon from '../../ui/SearchIcon'
+>>>>>>> Stashed changes
 
 type props = {
   onChange?: any;

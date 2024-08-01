@@ -1,6 +1,11 @@
+<<<<<<< Updated upstream
 import React from "react";
 type p ={
     text:any
+=======
+ type p ={
+    text:string
+>>>>>>> Stashed changes
 }
 const Li = ({text}:p) => {
   return (

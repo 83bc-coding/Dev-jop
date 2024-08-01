@@ -1,10 +1,13 @@
-import React from "react";
-import BarDetails from "./BarInfo/BarDetails";
+ import BarDetails from "./BarInfo/BarDetails";
 import Description from "./description/description";
 
+<<<<<<< Updated upstream
 import { useParams } from "react-router-dom";
 import { GetJobDetails } from "../../queries/GetJobDetails";
 import BarDown from "./barDown/BarDown";
+=======
+ import { GetJobDetails } from "./GetJobDetails";
+>>>>>>> Stashed changes
 const JopDetails = () => {
   const x = GetJobDetails();
   console.log(x, "ffff");

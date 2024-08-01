@@ -1,6 +1,11 @@
+<<<<<<< Updated upstream
 import { ReactNode } from "react";
 import useTheme from "../../../../hooks/useTheme";
 
+=======
+import  { ReactNode, useContext } from "react";
+import { ThemeContext } from "../../../theme/themeContext";
+>>>>>>> Stashed changes
 type props = {
   children?: ReactNode;
 };

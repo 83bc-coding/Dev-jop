@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 import useTheme from "../../hooks/useTheme";
 
+=======
+import  { useContext } from "react";
+import { ThemeContext } from "../theme/themeContext";
+>>>>>>> Stashed changes
 type props = {
   name: string;
 };

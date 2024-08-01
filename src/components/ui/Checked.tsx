@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 import { ChangeEvent, InputHTMLAttributes, forwardRef } from "react";
 import useTheme from "../../hooks/useTheme";
+=======
+import   { useContext } from "react";
+import { ThemeContext } from "../theme/themeContext";
+>>>>>>> Stashed changes
 
 interface CheckboxProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "type" | "onChange"> {

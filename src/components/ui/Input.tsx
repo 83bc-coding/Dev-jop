@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { ReactNode, Ref } from "react";
 import useTheme from "../../hooks/useTheme";
 
@@ -10,6 +11,16 @@ type props = {
 };
 const Input = ({ children, title, onChange, value, ref }: props) => {
   const { theme } = useTheme();
+=======
+import  { ReactNode, useContext } from "react";
+import { ThemeContext } from "../theme/themeContext";
+ type props ={
+  title:string,
+  children:ReactNode
+ }
+const Input = ({ children,title }: props) => {
+  const { theme } = useContext(ThemeContext);
+>>>>>>> Stashed changes
 
   return (
     <div className="flex items-center w-[100%] mx-auto h-full  border-r-[1px] border-borderR">
