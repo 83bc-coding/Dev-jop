@@ -1,9 +1,7 @@
-import React from "react";
-import BarDetails from "./BarInfo/BarDetails";
+ import BarDetails from "./BarInfo/BarDetails";
 import Description from "./description/description";
 
-import { useParams } from "react-router-dom";
-import { GetJobDetails } from "../../queries/GetJobDetails";
+ import { GetJobDetails } from "../../queries/GetJobDetails";
 import BarDown from "./barDown/BarDown";
 const JopDetails = () => {
   const x = GetJobDetails();

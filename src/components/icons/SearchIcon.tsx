@@ -1,5 +1,4 @@
-import React from 'react'
-type props ={
+ type props ={
   color:string
 }
 const SearchIcon = ({color}:props) => {

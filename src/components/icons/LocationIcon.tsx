@@ -1,5 +1,4 @@
-import React from "react";
-
+ 
 const LocationIcon = () => {
   return (
     <div className="absolute inset-y-0 start-0 flex items-center ps-3     ">

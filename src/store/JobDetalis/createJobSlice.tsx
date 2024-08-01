@@ -8,7 +8,7 @@ export type JobState = {
 
 export const createJobSlice: StateCreator<Partial<JobState>> = (
   set,
- get
+ 
 ) => ({
   job: {},
   setJob: (job) => set({ job: job }),

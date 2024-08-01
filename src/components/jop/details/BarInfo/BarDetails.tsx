@@ -3,8 +3,7 @@ import LogoSmall from "./LogoSmall";
 import CompanySite from "./CompanySite";
 import LogoLarg from "./LogoLarg";
 import Bar from "./Bar";
-import { useJobDetails } from "../../../../store/JobDetalis/useJobDetails";
-type props = {
+ type props = {
   company: string;
   d: string;
   fill: string;

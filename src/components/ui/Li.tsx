@@ -1,5 +1,4 @@
-import React from "react";
-type p ={
+ type p ={
     text:any
 }
 const Li = ({text}:p) => {

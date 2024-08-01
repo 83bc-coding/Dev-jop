@@ -1,5 +1,4 @@
-import React from "react";
-import SunIcon from "../icons/SunIcon";
+ import SunIcon from "../icons/SunIcon";
 import MoonIcon from "../icons/MoonIcon";
 type props = {
   onChange: () => void;

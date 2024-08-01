@@ -1,5 +1,4 @@
-import React from "react";
-import Desc from "../../../ui/Desc";
+ import Desc from "../../../ui/Desc";
 import Text from "../../../ui/Text";
 import ListsDisc from "./listsDisc";
 type props = {

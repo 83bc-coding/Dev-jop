@@ -1,5 +1,4 @@
-import React from 'react'
-import JopLest from './JopLest'
+ import JopLest from './JopLest'
 
 const Jop = () => {
   return (

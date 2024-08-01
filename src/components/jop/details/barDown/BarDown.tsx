@@ -1,8 +1,6 @@
-import React from "react";
-import Bar from "./Bar";
+ import Bar from "./Bar";
 import JopInfo from "./infoJob";
-import CompanySite from "../BarInfo/CompanySite";
-type Props = {
+ type Props = {
   state: string;
   name: string;
 };

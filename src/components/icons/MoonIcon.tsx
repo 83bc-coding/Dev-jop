@@ -1,5 +1,4 @@
-import React from "react";
-
+ 
 const MoonIcon = () => {
   return (
     <span className="ms-3 text-sm  font-medium   ">

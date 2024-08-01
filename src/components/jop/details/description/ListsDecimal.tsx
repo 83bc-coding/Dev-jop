@@ -1,5 +1,4 @@
-import React, { ReactNode } from "react";
-import Li from "../../../ui/Li";
+ import Li from "../../../ui/Li";
 
 type Props = {
   data: object;

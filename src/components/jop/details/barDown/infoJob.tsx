@@ -1,5 +1,4 @@
-import React from "react";
-import JopInfo from "../../Jops/JopInfo";
+ import JopInfo from "../../Jops/JopInfo";
 import ButtonSearch from "../../searchBar/ButtonSearch";
 type props = {
   country: string;

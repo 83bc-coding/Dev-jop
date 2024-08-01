@@ -1,5 +1,4 @@
-import React from "react";
-type props ={
+ type props ={
     text:string
 }
 const Desc = ({text}:props) => {

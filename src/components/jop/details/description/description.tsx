@@ -1,5 +1,4 @@
-import React from "react";
-import Bar from "./Bar";
+ import Bar from "./Bar";
 import InfoJop from "./InfoJop";
 import Desc from "../../../ui/Desc";
 import Requirements from "./Requirements";

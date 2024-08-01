@@ -1,8 +1,6 @@
-import React, { useContext, useRef, useState } from "react";
-import Input from "../../ui/Input";
+ import Input from "../../ui/Input";
 import FilterIcon from "../../icons/LocationIcon";
-import { JobsContext } from "../../../store/JobDetalis/JobsContextProvider";
-type props = {
+ type props = {
   onChange?: any;
   ref?: any;
   value: string;

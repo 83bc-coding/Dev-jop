@@ -1,7 +1,6 @@
-import React, { ReactNode, useContext } from "react";
+import  { ReactNode } from "react";
 import Button from "../../ui/Button";
-import { JobsContext } from "../../../store/JobDetalis/JobsContextProvider";
-type props = {
+ type props = {
   w?: string;
   children?: ReactNode;
   onClick?:any
