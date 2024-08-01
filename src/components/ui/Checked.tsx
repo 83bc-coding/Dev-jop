@@ -1,34 +1,52 @@
-import { Ref } from "react";
+import { ChangeEvent, InputHTMLAttributes, forwardRef } from "react";
 import useTheme from "../../hooks/useTheme";
 
-type CheckedProps = {
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  ref?: Ref<HTMLInputElement>;
-  checked?: boolean;
-};
+interface CheckboxProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "type" | "onChange"> {
+  label: string;
+  onChange: (checked: boolean) => void;
+}
 
-const Checked = ({ checked, onChange, ref }: CheckedProps) => {
-  const { theme } = useTheme();
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
+  ({ label, onChange, className = "", ...props }, ref) => {
+    const { theme } = useTheme();
 
-  return (
-    <div className="flex items-center mt-8 ml-4">
-      <input
-        type="checkbox"
-        value=""
-        className=" h-5 w-5  border-blue rounded-md  accent-blue  focus:ring-blue focus:ring-2  dark:bg-gray-700 "
-        checked={checked}
-        ref={ref}
-        onChange={onChange}
-      />
-      <label
-        className={`ms-2 text-xl font-bold ${
-          theme === "dark" ? "text-cardL" : "text-cardD"
-        }  dark:text-gray-300`}
-      >
-        Full Time
-      </label>
-    </div>
-  );
-};
+    const isDark = theme === "dark";
 
-export default Checked;
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+      onChange(event.target.checked);
+    };
+
+    return (
+      <div className="flex items-center">
+        <label className="inline-flex items-center cursor-pointer">
+          <input
+            type="checkbox"
+            ref={ref}
+            onChange={handleChange}
+            className={`
+              form-checkbox h-5 w-5 rounded
+              text-blue-600 border-gray-300
+              focus:ring-blue-500 focus:ring-2 focus:ring-offset-2
+              ${isDark ? "bg-gray-700 border-gray-600" : "bg-white"}
+              transition duration-150 ease-in-out
+              ${className}
+            `}
+            {...props}
+          />
+          <span
+            className={`ml-2 text-sm font-medium
+              ${isDark ? "text-gray-300" : "text-gray-900"}
+            `}
+          >
+            {label}
+          </span>
+        </label>
+      </div>
+    );
+  }
+);
+
+Checkbox.displayName = "Checkbox";
+
+export default Checkbox;

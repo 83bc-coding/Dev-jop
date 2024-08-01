@@ -20,7 +20,7 @@ const Input = ({ children, title, onChange, value, ref }: props) => {
           id="simple-search"
           className={`${
             theme === "dark" ? "bg-cardD" : "bg-cardL"
-          }   text-gray-900 text-sm      focus:outline-none block w-full ps-14 p-2.5  dark:bg-gray-700 dark:border-blue dark:placeholder-gray-400 dark:text-white dark:focus:bg-blue dark:focus:border-blue `}
+          }   text-gray-900 text-sm      focus:outline-none block w-full ps-14 p-2.5`}
           placeholder={title}
           required
           onChange={onChange}

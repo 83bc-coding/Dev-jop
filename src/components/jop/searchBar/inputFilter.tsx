@@ -1,12 +1,13 @@
-import React, { useContext, useRef, useState } from "react";
-import Input from "../../ui/Input";
+import { Ref } from "react";
 import FilterIcon from "../../icons/LocationIcon";
-import { JobsContext } from "../../../store/JobDetalis/JobsContextProvider";
+import Input from "../../ui/Input";
+
 type props = {
-  onChange?: any;
-  ref?: any;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  ref?: Ref<HTMLInputElement>;
   value: string;
 };
+
 const InputFilter = ({ onChange, value, ref }: props) => {
   return (
     <Input
