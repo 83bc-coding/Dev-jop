@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "../theme/themeContext";
+import useTheme from "../../hooks/useTheme";
+
 type props = {
   name: string;
 };
 const Text = ({ name }: props) => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   return (
     <p

@@ -1,8 +1,14 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "../theme/themeContext";
+import { Ref } from "react";
+import useTheme from "../../hooks/useTheme";
 
-const Checked = () => {
-  const { theme } = useContext(ThemeContext);
+type CheckedProps = {
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  ref?: Ref<HTMLInputElement>;
+  checked?: boolean;
+};
+
+const Checked = ({ checked, onChange, ref }: CheckedProps) => {
+  const { theme } = useTheme();
 
   return (
     <div className="flex items-center mt-8 ml-4">
@@ -10,6 +16,9 @@ const Checked = () => {
         type="checkbox"
         value=""
         className=" h-5 w-5  border-blue rounded-md  accent-blue  focus:ring-blue focus:ring-2  dark:bg-gray-700 "
+        checked={checked}
+        ref={ref}
+        onChange={onChange}
       />
       <label
         className={`ms-2 text-xl font-bold ${

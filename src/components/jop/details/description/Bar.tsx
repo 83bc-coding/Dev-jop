@@ -1,10 +1,11 @@
-import React, { ReactNode, useContext } from "react";
-import { ThemeContext } from "../../../theme/themeContext";
+import { ReactNode } from "react";
+import useTheme from "../../../../hooks/useTheme";
+
 type props = {
   children?: ReactNode;
 };
 const Bar = ({ children }: props) => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   return (
     <div

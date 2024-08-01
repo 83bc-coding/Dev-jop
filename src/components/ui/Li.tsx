@@ -1,13 +1,12 @@
 import React from "react";
 type p ={
-    text:string
+    text:any
 }
 const Li = ({text}:p) => {
   return (
-    <li className="text-lg text-blue">
+    <li className="text-lg text-blue p">
       {" "}
-      <span className="bg-blue w-4 h-4 invisible">cxc</span>{" "}
-      <span className="text-[#6e8098]">
+       <span className="text-[#6e8098] indent-63 pl-2">
        {text}
       </span>{" "}
     </li>

@@ -3,7 +3,8 @@ import BarDetails from "./BarInfo/BarDetails";
 import Description from "./description/description";
 
 import { useParams } from "react-router-dom";
-import { GetJobDetails } from "./GetJobDetails";
+import { GetJobDetails } from "../../queries/GetJobDetails";
+import BarDown from "./barDown/BarDown";
 const JopDetails = () => {
   const x = GetJobDetails();
   console.log(x, "ffff");
@@ -15,11 +16,12 @@ const JopDetails = () => {
         country={x.location}
         time={x.postedAt}
         ago={x.postedAt}
-        name={x.company}
+        name={x.position}
         description={x.description}
         requirements={x.requirements}
         role={x.role}
       />
+      <BarDown name={x.position} state={x.company} />
     </div>
   );
 };

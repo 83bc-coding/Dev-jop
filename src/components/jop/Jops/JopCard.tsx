@@ -1,9 +1,8 @@
-import React, { useContext, useEffect } from "react";
-import { ThemeContext } from "../../theme/themeContext";
+import { useNavigate } from "react-router-dom";
+import useTheme from "../../../hooks/useTheme";
 import JopInfo from "./JopInfo";
 import LogoSmall from "./LogoSmall";
-import { useJobDetails } from "../../../store/JobDetalis/useJobDetails";
-import { Route, useNavigate } from "react-router-dom";
+
 type props = {
   name: string;
   ago: string;
@@ -14,7 +13,8 @@ type props = {
   fill: string;
   bg: string;
   jobb: object;
- id:number};
+  id: number;
+};
 const JopCard = ({
   bg,
   name,
@@ -24,13 +24,12 @@ const JopCard = ({
   country,
   d,
   fill,
-id
+  id,
 }: props) => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useTheme();
   const navigate = useNavigate();
-  
+
   const handleAddJob = () => {
- 
     navigate(`/details/${id.toString()}`);
   };
 
@@ -41,7 +40,7 @@ id
       }       h-[247px] lg:w-[30%] rounded pl-6 md:w-[47%] sm:w-[100%]   mt-8 flex flex-col justify-around `}
     >
       <LogoSmall d={d} fill={fill} bg={bg} />
- 
+
       <JopInfo
         name={name}
         ago={ago}
@@ -52,7 +51,6 @@ id
       >
         <span className="w-1 h-1 rounded-full bg-info "> </span>
       </JopInfo>
-     
     </div>
   );
 };
